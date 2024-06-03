@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Joystick Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: JoystickDemo(),
     );
@@ -97,7 +97,7 @@ class _JoystickDemoState extends State<JoystickDemo> {
 
   Container _rightScreen(BuildContext context) {
     return Container(
-      color: Colors.blue, // Rechte Hälfte blau
+      color: Colors.greenAccent , // Rechte Hälfte blau
       width:
           MediaQuery.of(context).size.width / 2, // Hälfte der Bildschirmbreite
       child: Center(
@@ -181,7 +181,7 @@ class _JoystickDemoState extends State<JoystickDemo> {
 
   Container _leftScreen(BuildContext context) {
     return Container(
-      color: Colors.red, // Linke Hälfte rot
+      color: Colors.greenAccent , // Linke Hälfte rot
       width:
           MediaQuery.of(context).size.width / 2, // Hälfte der Bildschirmbreite
       child: Column(
@@ -194,6 +194,7 @@ class _JoystickDemoState extends State<JoystickDemo> {
                 _joystickY = details.y;
                 _inputHandler.setJoystickData(
                     details.x, details.y); // Setze die Joystick-Daten
+                final int autoPilot = _inputHandler.getAutopilotState();
               });
             },
           ),
